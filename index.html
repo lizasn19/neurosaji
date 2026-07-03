@@ -640,28 +640,54 @@
 
                     <div class="grid grid-cols-2 gap-4">
 
+                        <div onclick="openCertificateModal('halal')"
+                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 cursor-pointer hover:bg-brand-mint/30 hover:scale-[1.03] transition-all relative overflow-hidden group">
+                            <div
+                                class="absolute inset-0 bg-brand-green/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            </div>
+                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Lihat
+                                    Dokumen <i class="fas fa-external-link-alt ml-1"></i></span>
+                                <span class="text-sm font-bold text-brand-dark block leading-tight">Sertifikat
+                                    Halal</span>
+                            </div>
+                        </div>
+
+                        <div onclick="openCertificateModal('pirt')"
+                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 cursor-pointer hover:bg-brand-mint/30 hover:scale-[1.03] transition-all relative overflow-hidden group">
+                            <div
+                                class="absolute inset-0 bg-brand-green/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            </div>
+                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-file-signature"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Lihat
+                                    Dokumen <i class="fas fa-external-link-alt ml-1"></i></span>
+                                <span class="text-sm font-bold text-brand-dark block leading-tight">Izin Edar
+                                    SPP-IRT</span>
+                            </div>
+                        </div>
+
                         <div
-                            class="p-4 bg-white rounded-xl border border-brand-green/10 shadow-sm flex items-center gap-3">
-                            <div class="text-brand-green text-2xl"><i class="fas fa-certificate"></i></div>
-                            <div>
-                                <span class="text-xs text-gray-500 block">Kualifikasi</span>
-                                <span class="text-sm font-bold text-brand-dark block">Halal Indonesia</span>
+                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-brand-green/5"></div>
+                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-shield-alt"></i></div>
+                            <div class="relative z-10">
+                                <span class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Perlindungan</span>
+                                <span class="text-sm font-bold text-brand-dark block leading-tight">Hak Cipta HKI</span>
                             </div>
                         </div>
                         <div
-                            class="p-4 bg-white rounded-xl border border-brand-green/10 shadow-sm flex items-center gap-3">
-                            <div class="text-brand-green text-2xl"><i class="fas fa-shield-alt"></i></div>
-                            <div>
-                                <span class="text-xs text-gray-500 block">Perlindungan</span>
-                                <span class="text-sm font-bold text-brand-dark block">Hak Cipta HKI</span>
-                            </div>
-                        </div>
-                        <div
-                            class="p-4 bg-white rounded-xl border border-brand-green/10 shadow-sm flex items-center gap-3">
-                            <div class="text-brand-green text-2xl"><i class="fas fa-flask"></i></div>
-                            <div>
-                                <span class="text-xs text-gray-500 block">Uji Lab</span>
-                                <span class="text-sm font-bold text-brand-dark block">Antioksidan Tinggi</span>
+                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-brand-green/5"></div>
+                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-flask"></i></div>
+                            <div class="relative z-10">
+                                <span class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Uji Lab</span>
+                                <span class="text-sm font-bold text-brand-dark block leading-tight">Antioksidan Tinggi</span>
                             </div>
                         </div>
                     </div>
@@ -834,6 +860,41 @@
                 <i class="fas fa-paper-plane"></i>
             </button>
         </form>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certModal"
+        class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300"
+            id="certModalContent">
+
+            <!-- Header -->
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-[#FAFDF9]">
+                <h3 id="certModalTitle" class="text-xl font-bold text-brand-dark flex items-center gap-2">
+                    <i class="fas fa-certificate text-brand-green"></i> Dokumen Legalitas
+                </h3>
+                <button onclick="closeCertificateModal()"
+                    class="text-gray-400 hover:text-red-500 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Image Viewer / Carousel -->
+            <div class="flex-1 overflow-y-auto p-4 bg-gray-50 flex flex-col items-center relative min-h-[50vh]">
+                <div id="certImageContainer" class="w-full flex flex-col items-center gap-6">
+                    <!-- Images will be injected here via JS -->
+                </div>
+            </div>
+
+            <!-- Footer / Info -->
+            <div
+                class="px-6 py-4 bg-white border-t border-gray-100 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p class="text-xs text-gray-500"><i class="fas fa-info-circle text-brand-green mr-1"></i> Gulir (scroll)
+                    ke bawah untuk melihat seluruh halaman dokumen.</p>
+                <button onclick="closeCertificateModal()"
+                    class="px-6 py-2 bg-brand-green text-white rounded-full text-sm font-bold hover:bg-brand-dark transition-colors">Tutup</button>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER SECTION -->
@@ -1043,6 +1104,93 @@
             container.scrollTop = container.scrollHeight;
         }
 
+        // ==========================================
+        // Certificate Modal Logic (Halal & PIRT)
+        // ==========================================
+
+        // PENTING: Ganti tulisan di dalam tanda kutip dengan link gambar atau path lokal gambar (contoh: "assets/halal1.jpg")
+        const halalImages = [
+            "halal-1.jpeg",
+            "halal-2.jpeg",
+            "halal-3.jpeg",
+            "halal-4.jpeg",
+            "halal-5.jpeg",
+            "halal-6.jpeg"
+        ];
+
+        const pirtImages = [
+            "pirt-1.jpeg",
+            "pirt-2.jpeg",
+            "pirt-3.jpeg",
+            "pirt-4.jpeg"
+        ];
+
+        function openCertificateModal(type) {
+            const modal = document.getElementById('certModal');
+            const modalContent = document.getElementById('certModalContent');
+            const title = document.getElementById('certModalTitle');
+            const container = document.getElementById('certImageContainer');
+
+            container.innerHTML = ''; // clear previous
+
+            let images = [];
+            if (type === 'halal') {
+                title.innerHTML = '<i class="fas fa-certificate text-brand-green"></i> Sertifikat Halal Indonesia';
+                images = halalImages;
+            } else if (type === 'pirt') {
+                title.innerHTML = '<i class="fas fa-file-signature text-brand-orange"></i> Izin Edar SPP-IRT';
+                images = pirtImages;
+            }
+
+            // Inject images
+            images.forEach((src, index) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = "w-full max-w-2xl bg-white p-2 rounded-xl shadow-sm border border-gray-200 relative mb-4";
+
+                const badge = document.createElement('span');
+                badge.className = "absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-white text-xs px-3 py-1 rounded-full font-bold shadow-md z-10";
+                badge.innerText = `Halaman ${index + 1}`;
+
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = "w-full h-auto rounded-lg";
+                img.alt = `Dokumen ${type} Halaman ${index + 1}`;
+
+                wrapper.appendChild(badge);
+                wrapper.appendChild(img);
+                container.appendChild(wrapper);
+            });
+
+            // Show modal with animation
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertificateModal() {
+            const modal = document.getElementById('certModal');
+            const modalContent = document.getElementById('certModalContent');
+
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // restore scrolling
+            }, 300);
+        }
+
+        // Close on outside click
+        document.getElementById('certModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeCertificateModal();
+            }
+        });
 
     </script>
 </body>
