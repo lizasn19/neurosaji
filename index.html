@@ -628,42 +628,47 @@
                                 <span class="text-sm font-bold text-brand-dark block leading-tight">Hak Cipta HKI</span>
                             </div>
                         </div>
-                        <div onclick="openCertificateModal('lab1')"
+                        <div onclick="openCertificateModal('kimia')"
                             class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 cursor-pointer hover:bg-brand-mint/30 hover:scale-[1.03] transition-all relative overflow-hidden group">
                             <div
                                 class="absolute inset-0 bg-brand-green/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                             </div>
-                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-flask"></i></div>
+                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-microscope"></i></div>
                             <div class="relative z-10">
                                 <span
                                     class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Lihat Dokumen <i class="fas fa-external-link-alt ml-1"></i></span>
-                                <span class="text-sm font-bold text-brand-dark block leading-tight">Uji Lab Periode 1</span>
+                                <span class="text-sm font-bold text-brand-dark block leading-tight">Pemeriksaan Kimia</span>
                             </div>
                         </div>
+                    </div>
 
-                        <div onclick="openCertificateModal('lab2')"
-                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 cursor-pointer hover:bg-brand-mint/30 hover:scale-[1.03] transition-all relative overflow-hidden group">
-                            <div
-                                class="absolute inset-0 bg-brand-green/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <!-- Riwayat Uji Lab Antioksidan 3 Periode -->
+                    <div class="mt-8 border-t border-brand-green/20 pt-6">
+                        <span class="text-brand-green font-bold text-sm tracking-wider uppercase block mb-4">Riwayat Uji Lab Antioksidan (SIG)</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div onclick="openCertificateModal('lab1')"
+                                class="p-3 bg-white rounded-xl border border-brand-green/20 shadow-sm flex flex-col items-center justify-center text-center gap-2 cursor-pointer hover:bg-brand-mint/30 hover:border-brand-green/50 hover:scale-[1.03] transition-all group">
+                                <div class="text-brand-green text-xl"><i class="fas fa-flask"></i></div>
+                                <div>
+                                    <span class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block">Lihat Dokumen</span>
+                                    <span class="text-xs font-bold text-brand-dark block">Periode 1</span>
+                                </div>
                             </div>
-                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-flask"></i></div>
-                            <div class="relative z-10">
-                                <span
-                                    class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Lihat Dokumen <i class="fas fa-external-link-alt ml-1"></i></span>
-                                <span class="text-sm font-bold text-brand-dark block leading-tight">Uji Lab Periode 2</span>
+                            <div onclick="openCertificateModal('lab2')"
+                                class="p-3 bg-white rounded-xl border border-brand-green/20 shadow-sm flex flex-col items-center justify-center text-center gap-2 cursor-pointer hover:bg-brand-mint/30 hover:border-brand-green/50 hover:scale-[1.03] transition-all group">
+                                <div class="text-brand-green text-xl"><i class="fas fa-flask"></i></div>
+                                <div>
+                                    <span class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block">Lihat Dokumen</span>
+                                    <span class="text-xs font-bold text-brand-dark block">Periode 2</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div onclick="openCertificateModal('lab3')"
-                            class="p-4 bg-white rounded-xl border border-brand-green/40 shadow-md flex items-center gap-3 cursor-pointer hover:bg-brand-mint/30 hover:scale-[1.03] transition-all relative overflow-hidden group">
-                            <div
-                                class="absolute inset-0 bg-brand-green/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                            </div>
-                            <div class="text-brand-green text-2xl relative z-10"><i class="fas fa-flask"></i></div>
-                            <div class="relative z-10">
-                                <span
-                                    class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block mb-0.5">Lihat Dokumen <i class="fas fa-external-link-alt ml-1"></i></span>
-                                <span class="text-sm font-bold text-brand-dark block leading-tight">Uji Lab Periode 3</span>
+                            <div onclick="openCertificateModal('lab3')"
+                                class="p-3 bg-white rounded-xl border border-brand-green/20 shadow-sm flex flex-col items-center justify-center text-center gap-2 cursor-pointer hover:bg-brand-mint/30 hover:border-brand-green/50 hover:scale-[1.03] transition-all group">
+                                <div class="text-brand-green text-xl"><i class="fas fa-flask"></i></div>
+                                <div>
+                                    <span class="text-[10px] text-brand-orange font-bold uppercase tracking-wider block">Lihat Dokumen</span>
+                                    <span class="text-xs font-bold text-brand-dark block">Periode 3</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1107,7 +1112,7 @@
             "lab1-3.jpeg"
         ];
 
-        const lab2Images = [
+        const kimiaImages = [
             "lab2-1.jpeg",
             "lab2-2.jpeg"
         ];
@@ -1127,16 +1132,20 @@
             } else if (type === 'pirt') {
                 title.innerHTML = '<i class="fas fa-file-signature text-brand-orange"></i> Izin Edar SPP-IRT';
                 images = pirtImages;
+            } else if (type === 'kimia') {
+                title.innerHTML = '<i class="fas fa-microscope text-brand-green"></i> Hasil Pemeriksaan Kimia';
+                images = kimiaImages;
             } else if (type === 'lab1') {
                 title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 1)';
                 images = lab1Images;
             } else if (type === 'lab2') {
-                title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Pemeriksaan Kimia (Periode 2)';
-                images = lab2Images;
+                title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 2)';
+                images = [];
+                container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab antioksidan periode 2 akan segera diunggah.</p>';
             } else if (type === 'lab3') {
                 title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 3)';
                 images = [];
-                container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab periode 3 akan segera diunggah.</p>';
+                container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab antioksidan periode 3 akan segera diunggah.</p>';
             }
 
             // Inject images
