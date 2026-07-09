@@ -1117,6 +1117,12 @@
             "lab2-2.jpeg"
         ];
 
+        const lab3Images = [
+            "lab3-1.jpeg",
+            "lab3-2.jpeg",
+            "lab3-3.jpeg"
+        ];
+
         function openCertificateModal(type) {
             const modal = document.getElementById('certModal');
             const modalContent = document.getElementById('certModalContent');
@@ -1144,8 +1150,7 @@
                 container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab antioksidan periode 2 akan segera diunggah.</p>';
             } else if (type === 'lab3') {
                 title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 3)';
-                images = [];
-                container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab antioksidan periode 3 akan segera diunggah.</p>';
+                images = lab3Images;
             }
 
             // Inject images
