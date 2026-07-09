@@ -1117,6 +1117,12 @@
             "lab2-2.jpeg"
         ];
 
+        const lab2Images = [
+            "periode2-1.jpeg",
+            "periode2-2.jpeg",
+            "periode2-3.jpeg"
+        ];
+
         const lab3Images = [
             "lab3-1.jpeg",
             "lab3-2.jpeg",
@@ -1146,8 +1152,7 @@
                 images = lab1Images;
             } else if (type === 'lab2') {
                 title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 2)';
-                images = [];
-                container.innerHTML = '<p class="text-center text-gray-500 py-8 font-medium">Dokumen hasil uji lab antioksidan periode 2 akan segera diunggah.</p>';
+                images = lab2Images;
             } else if (type === 'lab3') {
                 title.innerHTML = '<i class="fas fa-flask text-brand-green"></i> Hasil Uji Laboratorium (Periode 3)';
                 images = lab3Images;
